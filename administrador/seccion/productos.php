@@ -1,5 +1,11 @@
 <?php include("../template/header.php"); ?>
 
+<?php 
+ 
+ print_r($_POST);
+ print_r($_FILES);
+?>
+
 <div class="col-md-5">
 
 <div class="card">
@@ -8,7 +14,7 @@
     </div>
 
     <div class="card-body">
-            form method="POST" enctype="multipart/form-data">
+      <form method="POST" enctype="multipart/form-data">
 
             <div class = "form-group">
                 <label for="txtID">ID: </label>
@@ -21,14 +27,14 @@
             </div>
             
             <div class = "form-group">
-                <label for="txtnombre">Imagen: </label>
-                <input type="file" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre">
+                <label for="txtImagen">Imagen: </label>
+                <input type="file" class="form-control" id="txtImagen" name="txtImagen" placeholder="Nombre">
             </div>
 
             <div class="btn-group" role="group" aria-label="">
-                <button type="button" class="btn btn-success"> Agregar</button>
-                <button type="button" class="btn btn-warning">Modificar</button>
-                <button type="button" class="btn btn-info">Cancelar</button>
+                <button type="button" name="accion" value="Agregar" class="btn btn-success"> Agregar</button>
+                <button type="button" name="accion" value="Modificar"  class="btn btn-warning">Modificar</button>
+                <button type="button"name="accion" value="Cancelar"  class="btn btn-info">Cancelar</button>
             </div>
 
         </form>
@@ -44,7 +50,7 @@
 
 <div class="col-md-7">
 
-   <table class="table table-border">
+   <table class="table table-bordered">
        <thead>
            <tr>
                <th>ID</th>
