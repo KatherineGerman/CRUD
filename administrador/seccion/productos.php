@@ -43,7 +43,26 @@
 </div>
 
 <div class="col-md-7">
-Tabla de libros(donde se van a mostrar)
+
+   <table class="table table-border">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Nombre</th>
+               <th>Imagen</th>
+               <th>Acciones</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td>2</td>
+               <td>Aprende php</td>
+               <td>Imagen.jpg</td>
+               <td>Seleccionar | Borrar</td>
+           </tr>
+          
+       </tbody>
+   </table>
 
     
 </div>
