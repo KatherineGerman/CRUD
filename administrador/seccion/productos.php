@@ -2,8 +2,35 @@
 
 <?php 
  
- print_r($_POST);
- print_r($_FILES);
+ $txtID=(isset($_POST['txtID']))?$_POST['txtID']:"";
+$txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
+
+$txtImagen=(isset($_FILES['txtID']['name']))?$_FILES['txtID']['name']:"";
+
+$accion=(isset($_POST['accion']))?$_POST['accion']:"";
+
+echo $txtID."<br/>";
+echo $txtNombre."<br/>";
+echo $txtImagen."<br/>";
+echo $accion."<br/>";  
+
+//print_r($_POST);
+//print_r($_FILES);
+
+switch($accion) {
+
+    case "Agregar";
+      echo "Presionado boton agregar";
+    break;
+
+    case "Modificar";
+      echo "Presionado boton modificar";
+    break;  
+
+    case "Cancelar";
+      echo "Presionado boton cancelar";
+    break;
+}
 ?>
 
 <div class="col-md-5">
@@ -14,6 +41,7 @@
     </div>
 
     <div class="card-body">
+
       <form method="POST" enctype="multipart/form-data">
 
             <div class = "form-group">
@@ -22,13 +50,13 @@
             </div>
 
             <div class = "form-group">
-                <label for="txtnombre">Nombre: </label>
+                <label for="txtNombre">Nombre: </label>
                 <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre del libro">
             </div>
             
             <div class = "form-group">
                 <label for="txtImagen">Imagen: </label>
-                <input type="file" class="form-control" id="txtImagen" name="txtImagen" placeholder="Nombre">
+                <input type="file" class="form-control" id="txtImagen" name="txtImagen" placeholder="Imagen">
             </div>
 
             <div class="btn-group" role="group" aria-label="">
